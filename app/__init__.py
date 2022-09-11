@@ -9,6 +9,7 @@ import logging
 from logging.handlers import SMTPHandler
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
+from flask_moment import Moment
 
 app = Flask(__name__)
 app.config.from_object(Config)
@@ -19,6 +20,8 @@ login = LoginManager(app)
 login.login_view = 'login'
 login.login_message = "Пожалуйста, войдите, чтобы открыть эту страницу." # <-- я добавил эту строку
 mail = Mail(app)
+moment = Moment(app)
+
 
 from app import routes, models, errors
 
