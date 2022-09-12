@@ -1,118 +1,96 @@
-2022-08-27 23:19:17,856 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-08-30 23:26:50,570 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-08-30 23:31:36,989 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-08-30 23:31:51,338 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-09-02 23:50:28,143 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-09-02 23:57:20,192 INFO: Microblog startup [in /home/kinchu/Projects/new_test_flask/app/__init__.py:34]
-2022-09-04 20:55:34,313 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 20:58:48,952 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 21:00:58,260 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 21:02:23,527 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 21:05:38,850 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 23:05:35,820 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 23:06:00,995 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 23:10:10,266 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 23:11:44,843 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-04 23:15:03,700 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-06 21:22:23,995 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-06 21:22:24,570 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-06 21:42:15,908 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:34]
-2022-09-06 21:43:42,351 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 22:58:38,271 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 22:59:14,858 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 22:59:15,371 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 23:04:21,369 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 23:42:15,043 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 23:42:15,547 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-09 23:49:36,963 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-10 13:40:12,528 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-10 13:40:16,919 ERROR: Exception on /login [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+2022-09-12 22:13:54,945 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:53]
+2022-09-12 22:21:01,025 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:53]
+2022-09-12 22:26:05,252 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:53]
+2022-09-12 22:26:10,154 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1509, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
-  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 43, in login
-    return render_template('login.html', title='Sign In', form=form)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/home/kinchu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kinchu/Projects/flask_mega_book/app/templates/login.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kinchu/Projects/flask_mega_book/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/base.html
-2022-09-10 13:40:17,081 ERROR: Exception on /favicon.ico [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
-Traceback (most recent call last):
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1523, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1499, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1481, in raise_routing_exception
-    raise request.routing_exception  # type: ignore
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/ctx.py", line 397, in match_request
-    result = self.url_adapter.match(return_rule=True)  # type: ignore
-  File "/home/kinchu/.local/lib/python3.8/site-packages/werkzeug/routing.py", line 2047, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:11,668 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
 Traceback (most recent call last):
   File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1384, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1324, in handle_http_exception
-    return self.ensure_sync(handler)(e)
-  File "/home/kinchu/Projects/flask_mega_book/app/errors.py", line 6, in not_found_error
-    return render_template('404.html'), 404
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 148, in render_template
-    return _render(
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 128, in _render
-    rv = template.render(context)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
-    self.environment.handle_exception()
-  File "/home/kinchu/.local/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
-    raise rewrite_traceback_stack(source=source)
-  File "/home/kinchu/Projects/flask_mega_book/app/templates/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/kinchu/Projects/flask_mega_book/app/templates/base.html", line 1, in top-level template code
-    {% extends 'bootstrap/base.html' %}
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 59, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/templating.py", line 95, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: bootstrap/base.html
-2022-09-10 13:42:39,020 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-10 13:42:39,549 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:38]
-2022-09-10 13:55:21,965 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:39]
-2022-09-11 11:54:24,052 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:39]
-2022-09-11 11:54:24,512 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:39]
-2022-09-11 21:42:25,893 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:42:26,360 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:45:52,780 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:46:47,354 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:46:52,587 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:46:54,536 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:50:25,212 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:51:08,370 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:51:42,707 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:51:43,170 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:53:00,853 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
-2022-09-11 21:54:10,702 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:42]
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:13,032 ERROR: Exception on /explore [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:13,960 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:15,381 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:16,207 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:26:16,982 ERROR: Exception on /index [GET] [in /home/kinchu/.local/lib/python3.8/site-packages/flask/app.py:1455]
+Traceback (most recent call last):
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1521, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/kinchu/.local/lib/python3.8/site-packages/flask/app.py", line 1861, in preprocess_request
+    rv = self.ensure_sync(before_func)()
+  File "/home/kinchu/Projects/flask_mega_book/app/routes.py", line 27, in before_request
+    g.locale = str(get_locale())
+NameError: name 'g' is not defined
+2022-09-12 22:27:08,093 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:53]
+2022-09-12 22:28:47,822 INFO: Microblog startup [in /home/kinchu/Projects/flask_mega_book/app/__init__.py:52]
