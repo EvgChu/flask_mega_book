@@ -28,7 +28,8 @@ moment = Moment(app)
 babel = Babel(app)
 
 
-
+from app.errors import bp as errors_bp
+app.register_blueprint(errors_bp)
 
 
 @babel.localeselector
@@ -65,4 +66,4 @@ if not app.debug or True:
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-from app import routes, models, errors
+from app import routes, models
