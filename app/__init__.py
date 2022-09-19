@@ -36,11 +36,6 @@ app.register_blueprint(auth_bp, url_prefix='/auth')
 from app.main import bp as main_bp
 app.register_blueprint(main_bp)
 
-@babel.localeselector
-def get_locale():
-    # return request.accept_languages.best_match(app.config['LANGUAGES'])
-    return 'ru'
-
 if not app.debug or True:
     print(app.config['MAIL_SERVER'])
 
@@ -70,4 +65,8 @@ if not app.debug or True:
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-from app import models
+    
+@babel.localeselector
+def get_locale():
+    # return request.accept_languages.best_match(app.config['LANGUAGES'])
+    return 'ru'
