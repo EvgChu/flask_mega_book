@@ -6,7 +6,6 @@ from flask_login import LoginManager
 from logging.handlers import RotatingFileHandler
 import os
 import logging
-from flask import request
 from logging.handlers import SMTPHandler
 from flask_mail import Mail
 from flask_bootstrap import Bootstrap
@@ -33,6 +32,9 @@ app.register_blueprint(errors_bp)
 
 from app.auth import bp as auth_bp
 app.register_blueprint(auth_bp, url_prefix='/auth')
+
+from app.main import bp as main_bp
+app.register_blueprint(main_bp)
 
 @babel.localeselector
 def get_locale():
@@ -68,4 +70,4 @@ if not app.debug or True:
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
 
-from app import routes, models
+from app import models

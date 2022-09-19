@@ -1,16 +1,18 @@
 from datetime import datetime
-from flask import render_template, flash, redirect, url_for, request, g
-from flask_login import login_user, logout_user, current_user, login_required
-from werkzeug.urls import url_parse
+from flask import render_template, flash, redirect, url_for, request, g, \
+    jsonify
+from flask_login import current_user, login_required
 from flask_babel import _, get_locale
-from app import app, db
-from app.forms import LoginForm, RegistrationForm, EditProfileForm, \
-    EmptyForm, PostForm, ResetPasswordRequestForm, ResetPasswordForm
+from app import db
+from app.main.forms import EditProfileForm, EmptyForm, PostForm
 from app.models import User, Post
+from app.translate import translate
+from app.main import bp
+
 from guess_language import guess_language
 
 
-@app.before_request
+@bp.before_request
 def before_request():
     if current_user.is_authenticated:
         current_user.last_seen = datetime.utcnow()
@@ -18,7 +20,7 @@ def before_request():
     g.locale = str(get_locale())
 
 
-@app.route('/user/<username>')
+@bp.route('/user/<username>')
 @login_required
 def user(username):
     user = User.query.filter_by(username=username).first_or_404()
@@ -34,7 +36,7 @@ def user(username):
                            next_url=next_url, prev_url=prev_url, form=form)
 
 
-@app.route('/edit_profile', methods=['GET', 'POST'])
+@bp.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = EditProfileForm(current_user.username)
@@ -51,7 +53,7 @@ def edit_profile():
                            form=form)
 
 
-@app.route('/follow/<username>', methods=['POST'])
+@bp.route('/follow/<username>', methods=['POST'])
 @login_required
 def follow(username):
     form = EmptyForm()
@@ -71,7 +73,7 @@ def follow(username):
         return redirect(url_for('index'))
 
 
-@app.route('/unfollow/<username>', methods=['POST'])
+@bp.route('/unfollow/<username>', methods=['POST'])
 @login_required
 def unfollow(username):
     form = EmptyForm()
@@ -91,8 +93,8 @@ def unfollow(username):
         return redirect(url_for('index'))
 
 
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/index', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
+@bp.route('/index', methods=['GET', 'POST'])
 @login_required
 def index():
     form = PostForm()
@@ -119,7 +121,7 @@ def index():
                            prev_url=prev_url)
 
 
-@app.route('/explore')
+@bp.route('/explore')
 @login_required
 def explore():
     page = request.args.get('page', 1, type=int)
@@ -135,10 +137,7 @@ def explore():
                            prev_url=prev_url)
 
 
-from flask import jsonify
-from app.translate import translate
-
-@app.route('/translate', methods=['POST'])
+@bp.route('/translate', methods=['POST'])
 @login_required
 def translate_text():
     return jsonify({'text': translate(request.form['text'],
