@@ -8,7 +8,7 @@ from app.main.forms import EditProfileForm, EmptyForm, PostForm
 from app.models import User, Post
 from app.translate import translate
 from app.main import bp
-from guess_language import guess_language
+from langdetect import detect, LangDetectException
 
 
 @bp.before_request
@@ -98,7 +98,10 @@ def unfollow(username):
 def index():
     form = PostForm()
     if form.validate_on_submit():
-        language = guess_language(form.post.data)
+        try:
+            language = detect(form.post.data) #todo redis cache
+        except LangDetectException:
+            language = ''
         if language == 'UNKNOWN' or len(language) > 5:
             language = ''
         post = Post(body=form.post.data, author=current_user,
